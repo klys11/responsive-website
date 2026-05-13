@@ -338,6 +338,30 @@
       max-width: 40ch;
     }
   }
+
+  .fw-feature {
+    background-color: var(--color-fullwidth-bg);
+    color: var(--c-white);
+    text-align: center;
+
+    .wrapper__fw-feature {
+      display: grid;
+      justify-items: center;
+    }
+    .fw-feature__image {
+      width: 100%;
+      max-width: calc(792 / 16 * 1rem);
+    }
+
+    .fw-feature__title {
+      margin-block-end: 20px;
+    }
+
+    .fw-feature__content {
+      max-width: 80ch;
+      margin-block-end: 40px;
+    }
+  }
 }
 
 @layer utility {
