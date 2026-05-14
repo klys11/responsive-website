@@ -67,12 +67,24 @@
     --color-button-primary-border: var(--c-teal);
     --color-button-primary-border-hover: var(--c-teal-dark);
     --color-button-primary-text: var(--c-gray-dark);
+
+    --color-button-primary-white-bg: var(--c-white);
+    --color-button-primary-white-bg-hover: var(--c-teal);
+    --color-button-primary-white-border: var(--c-white);
+    --color-button-primary-white-border-hover: var(--c-teal);
+    --color-button-primary-white-text: var(--c-gray-dark);
+
     --color-button-secondary-bg: var(--c-transparent);
     --color-button-secondary-bg-hover: var(--c-white);
     --color-button-secondary-border: var(--c-white);
     --color-button-secondary-text: var(--c-white);
     --color-button-secondary-text-hover: var(--color-hero-bg);
     --color-fullwidth-bg: var(--c-magenta);
+    --color-cta-gradient-1: var(--c-gray-dark);
+    --color-cta-gradient-2: var(--c-purple);
+    --color-cta-gradient-3: var(--c-teal);
+    --color-cta-button: var(--c-white);
+    --color-cta-button-border: var(--c-white);
   }
 
   *,
@@ -158,6 +170,24 @@
       padding-block: 80px;
     }
   }
+
+  .fullwidth {
+    text-align: center;
+
+    .fullwidth__wrapper {
+      display: grid;
+      justify-items: center;
+    }
+
+    .fullwidth__title {
+      margin-block-end: 20px;
+    }
+
+    .fullwidth__content {
+      max-width: 80ch;
+      margin-block-end: 40px;
+    }
+  }
 }
 
 @layer component {
@@ -182,6 +212,17 @@
       &:hover {
         background-color: var(--color-button-primary-bg-hover);
         border-color: var(--color-button-primary-border-hover);
+      }
+
+      &.white {
+        background-color: var(--color-button-primary-white-bg);
+        color: var(--color-button-primary-white-text);
+        border: 2px solid var(--color-button-primary-white-border);
+
+        &:hover {
+          background-color: var(--color-button-primary-white-bg-hover);
+          border-color: var(--color-button-primary-white-border-hover);
+        }
       }
     }
 
@@ -419,6 +460,37 @@
 
     .testimonial__author-description {
       font-size: var(--font-size-quote-author);
+    }
+  }
+  .fw-cta {
+    background: linear-gradient(
+      to right,
+      var(--color-cta-gradient-1),
+      var(--color-cta-gradient-2) 75%,
+      var(--color-cta-gradient-3) 150%
+    );
+    color: var(--color-text-light);
+    text-align: center;
+
+    @media (width >= calc(1000 / 16 * 1rem)) {
+      background: linear-gradient(
+        to right,
+        var(--color-cta-gradient-1),
+        var(--color-cta-gradient-2) 55%,
+        var(--color-cta-gradient-3) 110%
+      );
+    }
+
+    .fw-cta__wrapper {
+    }
+
+    .fw-cta__title {
+    }
+
+    .fw-cta__text {
+    }
+
+    .fw-cta__button {
     }
   }
 }
